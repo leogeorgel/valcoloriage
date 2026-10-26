@@ -1,0 +1,72 @@
+/* ValColoriage : page gratuite Kalmeli tome 1. Aucune ressource externe. Couleurs de la couverture : bleu nuit #0A1B4D, jaune #FFD60A. */
+@font-face { font-family: "Poppins"; src: url("fonts/Poppins-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("fonts/Poppins-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("fonts/Poppins-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+
+:root {
+  --nuit: #0A1B4D;
+  --nuit-clair: #1B2F72;
+  --jaune: #FFD60A;
+  --creme: #FFFBEA;
+  --texte: #101A3A;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--texte);
+  background: var(--creme);
+}
+.contenu { width: 100%; max-width: 62rem; margin: 0 auto; padding: 0 1rem; }
+
+header { background: var(--nuit); color: #fff; padding: 1.25rem 0 2rem; }
+.barre { display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: 0.9rem; }
+.marque { font-weight: 700; letter-spacing: 0.02em; color: var(--jaune); }
+.langue a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+h1 { font-size: 1.75rem; line-height: 1.2; margin: 1.5rem 0 0.75rem; font-weight: 700; }
+.accroche { margin: 0; color: #DDE3F8; max-width: 36rem; }
+
+main { padding: 1.5rem 0 1rem; }
+.page-gratuite { display: grid; gap: 1.5rem; }
+.apercu { margin: 0; background: #fff; border: 3px solid var(--nuit); border-radius: 6px; padding: 0.5rem; max-width: 24rem; width: 100%; justify-self: center; }
+.apercu img { display: block; width: 100%; height: auto; }
+.apercu figcaption { font-size: 0.85rem; text-align: center; padding-top: 0.5rem; color: var(--nuit-clair); }
+h2 { font-size: 1.35rem; margin: 0 0 0.5rem; color: var(--nuit); }
+.boutons { display: grid; gap: 0.75rem; margin: 1.25rem 0 0.5rem; }
+.bouton {
+  display: block; text-align: center; text-decoration: none; font-weight: 600;
+  padding: 0.9rem 1.25rem; border-radius: 999px; min-height: 3rem;
+  background: var(--jaune); color: var(--nuit); border: 3px solid var(--nuit);
+}
+.bouton:hover, .bouton:focus-visible { background: var(--nuit); color: var(--jaune); }
+.bouton.discret { background: transparent; }
+.bouton.discret:hover, .bouton.discret:focus-visible { background: var(--nuit); color: var(--jaune); }
+.note { font-size: 0.85rem; color: var(--nuit-clair); margin: 0.25rem 0 0; }
+.inactif { display: block; text-align: center; padding: 0.9rem 1.25rem; border-radius: 999px; border: 3px dashed var(--nuit-clair); color: var(--nuit-clair); font-weight: 600; }
+
+section.livre { background: var(--nuit); color: #fff; margin: 2rem 0 0; padding: 1.75rem 0; }
+section.livre h2 { color: var(--jaune); }
+section.livre p { max-width: 38rem; }
+section.livre .bouton { display: inline-block; }
+section.livre .bouton:hover, section.livre .bouton:focus-visible { background: #fff; color: var(--nuit); border-color: #fff; }
+section.livre .inactif { display: inline-block; border-color: #9FB0E6; color: #DDE3F8; }
+
+.reseaux { padding: 1.5rem 0 0.5rem; }
+.reseaux ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.reseaux a { display: inline-block; padding: 0.5rem 1rem; border: 2px solid var(--nuit); border-radius: 999px; color: var(--nuit); text-decoration: none; font-weight: 600; }
+.reseaux a:hover, .reseaux a:focus-visible { background: var(--nuit); color: var(--jaune); }
+
+footer { padding: 1rem 0 2.5rem; font-size: 0.85rem; color: var(--nuit-clair); }
+footer h2 { font-size: 1rem; }
+a:focus-visible { outline: 3px solid var(--jaune); outline-offset: 2px; }
+header a:focus-visible { outline-color: #fff; }
+
+@media (min-width: 48rem) {
+  h1 { font-size: 2.4rem; }
+  .page-gratuite { grid-template-columns: 24rem 1fr; align-items: center; gap: 2.5rem; }
+  .boutons { grid-template-columns: 1fr 1fr; }
+}
+@media print { header, section.livre, .reseaux, footer { display: none; } }
